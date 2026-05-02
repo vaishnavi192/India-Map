@@ -230,9 +230,6 @@ const StateDetail = ({ stateName, onClose }: Props) => {
                       setActivePin(a);
                     }}
                     style={{ cursor: "pointer" }}
-                    className="pin-drop"
-                    // @ts-ignore CSS var
-                    style-x={delay}
                   >
                     <g style={{ animation: `pin-drop 700ms cubic-bezier(.34,1.56,.64,1) ${delay}ms both` }}>
                       {/* pulse halo */}
