@@ -1,16 +1,20 @@
 import { useMemo, useRef, useState } from "react";
 import IndiaMap from "@/components/IndiaMap";
 import StateCard from "@/components/StateCard";
+import StateDetail from "@/components/StateDetail";
 import { STATES } from "@/data/states";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Index = () => {
   const [selected, setSelected] = useState<string | null>(null);
+  const [detailFor, setDetailFor] = useState<string | null>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const activeStates = useMemo(() => STATES.map((s) => s.name), []);
 
   const handleSelect = (name: string) => {
     setSelected(name);
+    setDetailFor(name);
     const el = cardRefs.current[name];
     if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
   };
@@ -56,7 +60,7 @@ const Index = () => {
                   <StateCard
                     state={s}
                     selected={selected === s.name}
-                    onClick={() => setSelected(s.name)}
+                    onClick={() => handleSelect(s.name)}
                   />
                 </div>
               ))}
@@ -64,6 +68,16 @@ const Index = () => {
           </aside>
         </div>
       </div>
+
+      <Dialog open={!!detailFor} onOpenChange={(o) => !o && setDetailFor(null)}>
+        <DialogContent className="max-w-4xl p-0 sm:rounded-2xl border-0 bg-transparent shadow-none">
+          <div className="h-[80vh] w-full">
+            {detailFor && (
+              <StateDetail stateName={detailFor} onClose={() => setDetailFor(null)} />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 };
