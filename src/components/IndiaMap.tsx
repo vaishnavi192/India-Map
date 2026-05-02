@@ -20,7 +20,7 @@ const IndiaMap = ({ activeStates, selected, onSelect }: Props) => {
         height={800}
         style={{ width: "100%", height: "auto" }}
       >
-        <Geographies geography={topo as any} parseGeometries={(g: any) => g.objects.states.geometries}>
+        <Geographies geography={topo as any}>
           {({ geographies }) =>
             geographies.map((geo) => {
               const name: string = geo.properties.st_nm;
