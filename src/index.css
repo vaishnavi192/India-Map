@@ -14,9 +14,22 @@ All colors MUST be HSL.
     --map-default: 214 32% 88%;
     --map-default-stroke: 0 0% 100%;
     --map-active: 217 91% 60%;
-    --map-active-stroke: 217 91% 50%;
-    --map-hover: 217 91% 75%;
+    --map-active-stroke: 0 0% 100%;
+    --map-hover: 48 100% 65%;
+    --map-selected-glass: 0 0% 100%;
     --live-dot: 142 71% 45%;
+
+    /* Colorful palette for states */
+    --state-1: 351 83% 61%;   /* coral red */
+    --state-2: 28 95% 60%;    /* orange */
+    --state-3: 45 95% 55%;    /* amber */
+    --state-4: 142 65% 48%;   /* green */
+    --state-5: 173 70% 45%;   /* teal */
+    --state-6: 199 85% 55%;   /* sky blue */
+    --state-7: 230 75% 62%;   /* indigo */
+    --state-8: 270 70% 62%;   /* violet */
+    --state-9: 320 70% 60%;   /* pink */
+    --state-10: 12 75% 55%;   /* terracotta */
     --panel: 0 0% 100%;
     --panel-border: 214 32% 91%;
     --shadow-card: 0 1px 3px 0 hsl(222 47% 11% / 0.06), 0 1px 2px -1px hsl(222 47% 11% / 0.04);
