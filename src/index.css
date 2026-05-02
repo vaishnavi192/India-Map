@@ -8,8 +8,18 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --map-default: 214 32% 88%;
+    --map-default-stroke: 0 0% 100%;
+    --map-active: 217 91% 60%;
+    --map-active-stroke: 217 91% 50%;
+    --map-hover: 217 91% 75%;
+    --live-dot: 142 71% 45%;
+    --panel: 0 0% 100%;
+    --panel-border: 214 32% 91%;
+    --shadow-card: 0 1px 3px 0 hsl(222 47% 11% / 0.06), 0 1px 2px -1px hsl(222 47% 11% / 0.04);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
