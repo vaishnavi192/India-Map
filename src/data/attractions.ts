@@ -89,7 +89,7 @@ export const STATE_ATTRACTIONS: Record<string, StateAttractions> = {
       [75.0, 15.35, 0.4], [77.1, 14.45, 0.3], [76.0, 13.5, 0.45],
     ],
   },
-  Tamil Nadu: {
+  "Tamil Nadu": {
     center: [78.5, 11.0],
     avgTemp: 35,
     baseColor: "12 75% 55%",
