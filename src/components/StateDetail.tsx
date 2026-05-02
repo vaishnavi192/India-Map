@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import { geoMercator, geoPath, geoBounds } from "d3-geo";
+import { geoMercator, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import { Thermometer, MapPin, BarChart3, X, Landmark, Trees, Music2 } from "lucide-react";
 import topo from "@/data/india-states.json";
