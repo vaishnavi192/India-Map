@@ -28,7 +28,7 @@ const Index = () => {
         </header>
 
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-          <div className="rounded-2xl border border-panel-border bg-panel p-4 shadow-sm">
+          <div className="rounded-2xl border border-panel-border bg-gradient-to-br from-slate-50 to-slate-200 p-4 shadow-md">
             <IndiaMap
               activeStates={activeStates}
               selected={selected}
