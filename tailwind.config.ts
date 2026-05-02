@@ -19,6 +19,20 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        map: {
+          default: "hsl(var(--map-default))",
+          "default-stroke": "hsl(var(--map-default-stroke))",
+          active: "hsl(var(--map-active))",
+          "active-stroke": "hsl(var(--map-active-stroke))",
+          hover: "hsl(var(--map-hover))",
+        },
+        live: "hsl(var(--live-dot))",
+        panel: {
+          DEFAULT: "hsl(var(--panel))",
+          border: "hsl(var(--panel-border))",
+        },
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
