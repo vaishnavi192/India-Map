@@ -1,0 +1,165 @@
+/* ============================================================
+   Interactive India Map — standalone styles (no Tailwind needed)
+============================================================ */
+.im-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+.im-header { max-width: 1100px; margin: 0 auto 16px; }
+.im-header h1 { font-size: 28px; font-weight: 700; margin: 0; }
+.im-header p { color: #64748b; margin: 4px 0 0; font-size: 14px; }
+
+.im-mapwrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 16px;
+  box-shadow: 0 6px 18px -10px rgba(15, 23, 42, 0.2);
+}
+
+.im-btn {
+  background: #0f172a; color: #fff; border: 0; border-radius: 8px;
+  padding: 8px 14px; font-size: 14px; cursor: pointer;
+}
+.im-iconbtn {
+  background: transparent; border: 0; padding: 8px; border-radius: 999px;
+  cursor: pointer; color: rgba(15,23,42,0.7); font-size: 16px;
+}
+.im-iconbtn:hover { background: rgba(15,23,42,0.08); }
+.im-iconbtn.small { padding: 4px; font-size: 13px; }
+
+/* ----- Modal popup ----- */
+.im-modal {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  animation: im-fade 0.2s ease-out;
+}
+.im-modal-card {
+  width: 100%; max-width: 900px; height: 80vh;
+  border-radius: 18px; overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.4);
+}
+
+/* ----- Detail view ----- */
+.im-detail { display: flex; flex-direction: column; height: 100%; }
+.im-detail-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; gap: 8px;
+  border-bottom: 1px solid rgba(226,232,240,0.7);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(8px);
+}
+.im-detail-header h2 { font-size: 18px; font-weight: 700; margin: 0; }
+.im-detail-header p { font-size: 12px; color: #64748b; margin: 2px 0 0; }
+.im-detail-map { position: relative; flex: 1; overflow: hidden; }
+
+.im-empty {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; gap: 12px; padding: 32px; text-align: center; color: #64748b;
+}
+
+/* ----- Info card ----- */
+.im-info {
+  position: absolute; bottom: 16px; left: 16px; right: 16px;
+  max-width: 360px; margin: 0 auto;
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px -12px rgba(0,0,0,0.3);
+  animation: im-fade 0.25s ease-out;
+}
+@media (min-width: 640px) {
+  .im-info { right: auto; margin: 0; }
+}
+.im-info-dot {
+  width: 40px; height: 40px; border-radius: 10px; color: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.im-info-body { flex: 1; min-width: 0; }
+.im-info-body h3 { font-size: 14px; font-weight: 600; margin: 0; color: #0f172a; }
+.im-info-body p  { font-size: 12px; color: #64748b; margin: 2px 0 0; }
+.im-info-tag {
+  display: inline-block; margin-top: 4px; font-size: 10px;
+  padding: 2px 6px; border-radius: 6px; text-transform: uppercase;
+  background: rgba(15,23,42,0.1); color: rgba(15,23,42,0.7); font-weight: 500;
+}
+
+/* ----- Category filter chips ----- */
+.im-filters {
+  position: absolute; top: 12px; left: 12px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.8); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.im-chip {
+  border: 0; cursor: pointer; padding: 4px 10px;
+  border-radius: 8px; font-size: 11px; font-weight: 500;
+  background: #fff; color: rgba(15,23,42,0.6);
+  transition: all 0.2s ease;
+}
+.im-chip.on { color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+
+/* ----- Legends ----- */
+.im-legend {
+  position: absolute;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 10px;
+}
+.im-legend.top-right    { top: 12px; right: 12px; }
+.im-legend.bottom-right { bottom: 12px; right: 12px; }
+.im-legend-title { font-weight: 600; color: rgba(15,23,42,0.8); margin-bottom: 4px; }
+.im-legend-bar { height: 8px; width: 128px; border-radius: 999px; }
+.im-legend-row { display: flex; justify-content: space-between; margin-top: 4px; color: rgba(15,23,42,0.6); }
+
+/* ----- FABs ----- */
+.im-fabs {
+  position: absolute; right: 16px; bottom: 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.im-fab {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border: 0; border-radius: 999px;
+  background: #fff; color: rgba(15,23,42,0.7);
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  box-shadow: 0 8px 20px -10px rgba(0,0,0,0.3);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+.im-fab:hover { transform: scale(1.05); }
+.im-fab.active { color: #fff; transform: scale(1.05); }
+.im-fab-icon { font-size: 14px; }
+@media (max-width: 640px) {
+  .im-fab-label { display: none; }
+  .im-fab { padding: 12px; }
+}
+
+/* ----- Animations ----- */
+@keyframes im-pin-drop {
+  0%   { transform: translateY(-180px) scale(0.6); opacity: 0; }
+  60%  { transform: translateY(8px) scale(1.05); opacity: 1; }
+  78%  { transform: translateY(-6px) scale(0.98); }
+  90%  { transform: translateY(2px) scale(1.01); }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+@keyframes im-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
